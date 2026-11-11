@@ -1,0 +1,15 @@
+FATAL EXCEPTION: main
+Process: com.android.systemui
+java.lang.IllegalStateException: Task already scheduled or cancelled
+    at java.util.Timer.sched(Timer.java:408)
+    at java.util.Timer.scheduleAtFixedRate(Timer.java:377)
+    at com.sony.dtv.systemui.infoboard.InfoBoard.startUpdateClockTimer(InfoBoard.java:359)
+    at com.sony.dtv.systemui.infoboard.InfoBoard.startClock(InfoBoard.java:210)
+    at com.sony.dtv.systemui.infoboard.InfoBoard.onStart(InfoBoard.java:124)
+    at com.sony.dtv.systemui.infoboard.InfoBoard.onConfigurationChanged(InfoBoard.java:146)
+    at com.sony.dtv.systemui.SonySystemUIManager.lambda$onConfigurationChanged$4$SonySystemUIManager(SonySystemUIManager.java:329)
+    at com.sony.dtv.systemui.SonySystemUIManager.startSonySystemUI(SonySystemUIManager.java:259)
+
+Device:   KD-55XH8096 (BRAVIA 4K UR3, EU)
+Firmware: Sony/BRAVIA_UR3_EU/BRAVIA_UR3:10/QTG3.200305.006.S97/662301:user/release-keys
+Captured: adb logcat -b events,main immediately after reboot (May 2026)
